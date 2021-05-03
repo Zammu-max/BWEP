@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		aside{
+			background-image: url("images/nav.jpg");
+			flex: 20%;
+		}
+
+		main{
+			height: 90vh;
+			flex: 80%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+	<div class="bwep">
+		<div class="nav-bar">
+			<div class="nav-links" id="nav-links">
+				<img src="C:/Users/Owner/Documents/bwep/assets/close.png" class="close" onclick="closeMenu()">
+				<ul>
+					<a href="Homepage.html"><li>HOME</li></a>
+					<a href="#"><li>CUSTOMIZE</li></a>
+					<a href="#"><li>ABOUT US</li></a>
+					<a href="Cards.html"><li>TYPES OF CARD</li></a>
+				</ul>
+		</div>
+
+				<img src="C:/Users/Owner/Documents/bwep/assets/menubar.png" class="menu-icon" onclick="showMenu()">
+	</div>
+	</header>
+
+	<aside>
+		<div>
+		<h1>Input Greetings</h1>
+		<input type="greetings" name="greetings" id="greetings" placeholder="Input Greetings">
+	</div><br>
+	<div>
+		<h1>Input Occasion</h1>
+		<input type="occasion" name="occasion" id="occasion" placeholder="Input Occasion">
+	</div><br>
+	<div>
+		<h1>Input Date</h1>
+		<input type="date" name="date" id="date" placeholder="Input Date">
+	</div><br>
+	<div>	
+		<h1>Input Venue</h1>
+		<input type="venue" name="venue" id="venue" placeholder="Input Venue">
+	</div><br>
+	<div>
+		<h1>Input Details</h1>
+		<input type="details" name="details" id="details" placeholder="Input Details">
+		<select onchange="changer(this.value)">
+			<option value="0">Select </option>
+			<option value="1">Blue gold</option>
+			<option value="2">Business</option>
+			<option value="3">Blue gold 2</option>
+			<option value="4">Red rose</option>
+			<option value="5">L.Blue & Purple</option>
+			<option value="6">Graduation</option>
+		</select>
+	</div><br>
+	<button onclick="save()">Save</button>
+	<button onclick="recall()">Recall</button>
+	<button id="move" onclick="fillin()">move</button>
+	</aside>
+
+	<main>
+		<div class="main">
+			<!------------------------------preview card here------------------------------->
+			<div class="edit_box1" id="box">
+				<h2 id="greetings_result" style="text-align: center; margin-top: 100px;" placeholder="Choose greetings on the list"></h2>
+				<div class="names" id="n1" style="text-align: center; margin-top: 50px;" placeholder="Enter recipient's name"></div>
+				<h1 class="names" id="e1" style="text-align: center; margin-top: 50px;" placeholder="Enter event name"></h1>
+				<div class="names" id="h1" style="text-align: center; margin-top: 100px;" placeholder="Enter host names"></div>
+				<div class="names" id="d1" style="text-align: center; margin-top: 10px;" placeholder="Enter date"></div>
+				<div class="names" id="t1" style="text-align: center; margin-top: 10px;" placeholder="Enter time"></div>
+				<div class="names" id="p1" style="text-align: center; margin-top: 10px;" placeholder="place"></div>
+			</div>
+
+		</div>
+
+	</div>
+	</main>
+
+	<footer><h3>@copyright 2021</h3></footer>
+
+</body>
+</html>

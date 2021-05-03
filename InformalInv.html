@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		//For the dragndrop
+		function allowDrop(ev) {
+  		ev.preventDefault();
+		}
+
+		function drag(ev) {
+  		ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) {
+ 		 ev.preventDefault();
+  		var data = ev.dataTransfer.getData("text");
+  		ev.target.appendChild(document.getElementById(data));
+		}
+
+		function save(){
+			// var greetings = document.getElementById("greetings");
+			var occasion = document.getElementById("occasion");
+			var date = document.getElementById("date");
+			var venue = document.getElementById("venue");
+			var details = document.getElementById("details");
+
+			// localStorage.setItem("greetings", greetings.value);
+			localStorage.setItem("occasion", occasion.value);
+			localStorage.setItem("date", date.value);
+			localStorage.setItem("venue", venue.value);
+			localStorage.setItem("details", details.value);
+
+
+			
+			// alert("You have been revealed!");
+		}
+		function save(){
+			// var greetings = document.getElementById("greetings");
+			var occasion = document.getElementById("occasion");
+			var date = document.getElementById("date");
+			var venue = document.getElementById("venue");
+			var details = document.getElementById("details");
+
+			// localStorage.setItem("greetings", greetings.value);
+			localStorage.setItem("occasion", occasion.value);
+			localStorage.setItem("date", date.value);
+			localStorage.setItem("venue", venue.value);
+			localStorage.setItem("details", details.value);
+
+
+			
+			// alert("You have been revealed!");
+		}
+
+		function recall(){
+			// var greetings = document.getElementById("greetings");
+			var occasion = document.getElementById("occasion");
+			var date = document.getElementById("date");
+			var venue = document.getElementById("venue");
+			var details = document.getElementById("details");
+
+
+			// greetings.value = localStorage.getItem("greetings");
+			occasion.value = localStorage.getItem("occasion");
+			date.value = localStorage.getItem("date");
+			venue.value = localStorage.getItem("venue");
+			details.value = localStorage.getItem("details");
+		}
+		function fillin(){
+			// var greetings = document.getElementById("greetings1");
+			var occasion = document.getElementById("occasion1");
+			var date = document.getElementById("date1");
+			var venue = document.getElementById("venue1");
+			var details = document.getElementById("details1");
+
+			// greetings1.innerHTML = localStorage.getItem("greetings");
+			occasion1.innerHTML = localStorage.getItem("occasion");
+			date1.innerHTML = localStorage.getItem("date");
+			venue1.innerHTML = localStorage.getItem("venue");
+			details1.innerHTML = localStorage.getItem("details");
+		}
+
+		// let pick = document.getElementById("pickColor");
+		// let container = document.getElementById("container");
+		// container.style.backgroundColor = pick.value;
+		// pick.addEventListener("input", function(ev){
+		// 	container.style.backgroundColor = ev.target.value;
+		// },false);
+
+	function fontFamily(value){
+		if(value==1){
+			document.getElementById("container").style.fontFamily = "Arial";
+		}
+		else if(value==2){
+			document.getElementById("container").style.fontFamily = "Tahoma";
+		}
+		else if(value==3){
+			document.getElementById("container").style.fontFamily = "Helvetica";
+		}
+		else if(value==4){
+			document.getElementById("container").style.fontFamily = "Times";
+		}
+		else if(value==5){
+			document.getElementById("container").style.fontFamily = "Calibri";
+		}
+		else if(value==6){
+			document.getElementById("container").style.fontFamily = "Impact";
+		}
+		else if(value==7){
+			document.getElementById("container").style.fontFamily = "Courier New";
+		}
+		else if(value==8){
+			document.getElementById("container").style.fontFamily = "Papyrus";
+		}
+		else if(value==9){
+			document.getElementById("container").style.fontFamily = "Brush Script MT";
+		}
+		else if(value==10){
+			document.getElementById("container").style.fontFamily = "Garamond";
+		}
+		else if(value==11){
+			document.getElementById("container").style.fontFamily = "Lucida Handwriting";
+		}
+	}
+	function what(value){
+      var container = document.getElementById("container"); 
+      if(value==1){
+        container.style.backgroundColor="red";
+      }
+      
+      else if(value==2){
+        container.style.backgroundColor="green";
+      }
+
+      else if(value==3){
+        container.style.backgroundColor="blue";
+      }
+      else if(value==4){
+        container.style.backgroundColor="orange";
+      }
+      else if(value==5){
+        container.style.backgroundColor="purple";
+      }
+      else if(value==6){
+        container.style.backgroundColor="beige";
+      }
+      }
+
+      function changer(value){
+		
+		var canvas = document.getElementById("container")
+		if (value==1) {
+			canvas.style.backgroundImage="url(background/informal1.jpeg)"
+		}
+		else if(value==2){
+			canvas.style.backgroundImage="url(background/informal2.jpeg)"
+		}
+		else if(value==3){
+			canvas.style.backgroundImage="url(background/informal3.jpeg)"
+		}
+
+		else if(value==4){
+			canvas.style.backgroundImage="url(background/business3.jpeg)"
+		}
+		else if(value==5){
+			canvas.style.backgroundImage="url(background/babyshower.jpeg)"
+		}
+		else if(value==6){
+			canvas.style.backgroundImage="url(background/graduation.jpeg)"
+		}
+	}
+	 </script>
+	<style type="text/css">
+		body{
+			background-color: #F0ECEA;
+			margin: 0 0;
+		}
+		/*header{
+			width: 100%;
+			height: 1vh;
+		}*/
+
+		div{
+			display: block;
+
+		}
+		h1{
+			font-style: italic;
+		}
+
+		footer{
+			height: 10vh;
+			border:3px dashed black;
+			margin-top: 100px; 
+			position: static;
+			width: 100%;
+
+			
+
+		}
+
+		p{
+			font-size: 1em;
+			font-weight: bolder; 
+			position: relative;
+		}
+
+		/*#ebox{
+			height: 40px;
+		}*/
+
+		#container{
+			background-image:url("background/bluegold.jpeg");
+			margin-top: 50px;
+			justify-content: center;
+			align-content: center;
+			height: 800px;
+			width: 600px;
+			background-size:100% 100%;
+			background-repeat: no-repeat repeat;
+			border: 4px dashed black;
+			float: right;
+			margin-right: 500px;	
+		}
+
+		/*img{
+			height: 700px;
+			width: 500px;
+			z-index: 0;
+			float: right;
+			
+			
+		}*/
+		#greetings1{
+			z-index: 1;
+			position: absolute;
+			top:200px;
+			right:750px;
+			color: black;
+			text-align: center;
+			font-weight: bolder;
+			font-size: 25px;
+			text-transform: uppercase;	
+		}
+		#occasion1{
+			z-index: 1;
+			position: absolute;
+			top: 350px;
+			right:800px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+		}
+		#date1{
+			z-index: 1;
+			position: absolute;
+			top: 450px;
+			right:800px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+		}
+
+		#venue1{
+			z-index: 1;
+			position: absolute;
+			top: 550px;
+			right:800px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+			max-width: 300px;
+		}
+
+		#details1{
+			z-index: 1;
+			position: absolute;
+			top:650px;
+			right:680px;
+			color: black;
+			text-align: center;
+			font-weight: bolder;
+			font-size: 25px;
+			text-transform: uppercase;
+			max-width: 300px;	
+		}
+
+
+		.bwep{
+			height: 100vh;
+			/*background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(C:/Users/Owner/Documents/bwep/assets/image5.jpg);*/
+			background-position: center;
+			background-size: cover;
+			/*overflow-x: hidden;*/
+			position: relative;
+		}
+		.nav-bar{
+			display: flex;
+			padding: 30px 100px;
+			width: 100%;
+			align-items: center;
+			background-color: black;
+			margin-top: 0px;
+			margin-left: 0px;
+		}
+		/*.nav-logo{
+			width: 50px;
+			cursor: pointer;
+			margin: 30px 0;
+		}*/
+		.nav-links{
+			flex: 1;
+			text-align: center;
+		}
+		.nav-links ul{
+			/*margin-left: 40px;*/
+			display: inline;
+		}
+		.nav-links ul li{
+			list-style: none;
+			display: inline-block;
+			margin-right: 90px;
+		}
+		.nav-links ul a{
+			color: #FFFFFF;
+			text-decoration: none;
+			font-size: 13px;
+
+		}
+		.nav-links ul li::after{
+			content: '';
+			width: 0;
+			height: 2px;
+			background: #b5651d;
+			display: block;
+			margin: auto;
+			transition: .5s;
+		}
+		.nav-links ul li:hover::after{
+			width: 100%;
+
+		}
+		#colors{
+			margin-top: 10px;
+		}
+		.menu-icon{
+			display: none;
+			width: 20px;
+			cursor: pointer;
+			margin-right: 0;
+		}
+
+		.close{
+			display: none;
+			width: 20px;
+			cursor: pointer;
+			margin-right: 0;
+		}
+		table{
+			border:1px dashed white;
+			width: 300px;
+			align-items: center;
+			margin-top: 0;
+		}
+		/*#pick1, #pick2{
+			display: inline-block;
+			float: right;
+			margin-top: 40%;
+		}*/
+		/*#pick2{
+			margin-right: 30px;
+		}
+		#pick1{
+			margin-left: 60px;
+		}*/
+		#table1, #table2{
+			background-color: #F9FAB5;
+			margin-top: 0;
+			margin-left: 50px;
+		}
+		#div2 {
+  		width: 270px;
+  		height: 50px;
+  		padding: 10px;
+  		border-style: none;
+  		cursor: pointer;
+  		font-weight: bolder;
+		font-family: clean;
+		font-style: italic;
+		font-size: 40px;
+		color: black;
+		margin-top: 150px;
+		margin-left: 180px;
+	}
+
+	@media only screen and (max-width: 600px){
+			#container{
+				float: left;
+			}
+
+			#greetings1{
+			z-index: 1;
+			position: absolute;
+			top:300px;
+			right:150px;
+			color: black;
+			text-align: center;
+			font-weight: bolder;
+			font-size: 25px;
+			text-transform: uppercase;	
+		}
+		#occasion1{
+			z-index: 1;
+			position: absolute;
+			top: 450px;
+			right:150px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+		}
+		#date1{
+			z-index: 1;
+			position: absolute;
+			top: 650px;
+			right:150px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+		}
+
+		#venue1{
+			z-index: 1;
+			position: absolute;
+			top: 550px;
+			right:150px;
+			color: black;
+			font-size: 25px;
+			text-align: center;
+			font-weight: bolder;
+			max-width: 300px;
+		}
+
+		#details1{
+			z-index: 1;
+			position: absolute;
+			top:750px;
+			right:50px;
+			color: black;
+			text-align: center;
+			font-weight: bolder;
+			font-size: 25px;
+			text-transform: uppercase;
+			max-width: 300px;	
+		}
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div class="bwep">
+	<div class="nav-bar">
+			<!-- <div class="nav-logo">
+				<img src="C:/Users/Owner/Documents/bwep/assets/logo.jpg">
+			</div> -->
+			<div class="nav-links" id="nav-links">
+				<img src="C:/Users/Owner/Documents/bwep/assets/close.png" class="close" onclick="closeMenu()">
+
+				<ul>
+					<a href="index.html"><li>HOME</li></a>
+					<a href="NavCustom.html"><li>CUSTOMIZE</li></a>
+					<a href="#"><li>ABOUT US</li></a>
+					<a href="Cards.html"><li>TYPES OF CARD</li></a>
+					<!-- <a href="#"><li>FORMAL</li></a>
+					<a href="#"><li>INFORMAL</li></a> -->
+
+				</ul>
+			</div>
+<img src="C:/Users/Owner/Documents/bwep/assets/menubar.png" class="menu-icon" onclick="showMenu()">
+		</div>
+	
+
+
+
+
+<div >
+	<!-- <img src="bluegold.jpeg"> -->
+	<div id="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+		
+		<!-- <div id="greetings1" draggable="true" contenteditable=""><h1>Greetings</h1></div> -->
+		<div id="occasion1" contenteditable=""><h2></h2></div>
+		<div id="date1" contenteditable=""><h2></h2></div>
+		<div id="venue1" contenteditable=""><h2></h2></div>
+		<div id="details1" contenteditable=""><h2></h2></div>
+		
+	</div>
+<h1>Customize your own e-card!</h1>
+</div>	
+<aside id="div1" ondragover="allowDrop(event)">
+	<!-- <div id="div2" draggable="true" ondragstart="drag(event)"  id="drag1">Hello There!</div> -->
+	<div id="div2" draggable="true" ondragstart="drag(event)"  id="drag1">Hello There!</div>
+</aside>	
+	<table width="50%" cellspacing="30px" id="table1">
+		<tr><th><h3>Complete the inputs</h3></th></tr>
+	<!-- <div>
+		<tr>
+		<th><input type="greetings" name="greetings" id="greetings" placeholder="Input Greetings"></th>
+	</div><br></tr> -->
+	<div>
+		<tr>
+		<th><input type="occasion" name="occasion" id="occasion" placeholder="Input Occasion"></th>
+	</div><br></tr>
+	<div>
+		<tr>
+		<th><input type="date" name="date" id="date" placeholder="Input Date"></th>
+	</div><br></tr>
+	<div>	
+		<tr>
+		<th><input type="venue" name="venue" id="venue" placeholder="Input Venue"></th>
+	</div><br></tr>
+	<div>
+		<tr>
+		<th><input type="details" name="details" id="details" placeholder="Input Details"></th>
+		<tr><th><select onchange="changer(this.value)">
+			<option value="0">Select Template</option>
+			<option value="1">Template 1</option>
+			<option value="2">Template 2</option>
+			<option value="3">Template 3</option>
+			<!-- <option value="3">Template 3</option>
+			<option value="4">Template 3</option> -->
+			
+		</select></th></tr>
+	<br></tr></div>
+	<tr>
+	<th><button onclick="save()">Save</button>
+	<button onclick="recall()">Recall</button>
+	<button id="move" onclick="fillin()">move</button></th>
+	<tr><th><p>Send To Recipient's Email: </p></th></tr> <tr><th><input type="email" name="Email"></th><th><button><a href="email.html">Send To Recipient</a></button></th></tr>
+</table><br>
+	<!-- <button onclick="fillin()">move</button> -->
+	<!-- <div id="greetings1" contenteditable="">Greetings</div>
+	<div id="" contenteditable="">Occasion</div>
+	<div id="date1" contenteditable="">Date</div>
+	<div id="venue1" contenteditable="">Venue</div>
+	<div id="details1" contenteditable="">Details</div> -->
+	<div>
+	
+</body>
+</html>

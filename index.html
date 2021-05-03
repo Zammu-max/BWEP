@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+
+	<style type="text/css">
+		/*.bwep{
+			height: 100vh;	
+			background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(image5.jpeg);
+			background-position: center;
+			background-size: cover;
+			overflow-x: hidden;
+			position: relative;
+		}*/
+		.nav-bar{
+			display: flex;
+			padding: 30px 100px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+		.pic1{
+			width: 350px;
+			height: 350px;
+			margin-top: 10px;
+			/*padding: 15px;*/
+			margin-left: 60px;
+			align-items: center;
+			box-shadow: 1px 1px 5px 0px rgba(82, 82, 82, 0.75);
+  			transition: all 150ms ease-in-out;
+		}
+		.pic1:hover{
+			top: -3px;
+			left: -3px;
+  			box-shadow: 3px 3px 15px 0px rgba(82, 82, 82, 0.85);
+		}
+		.pic1:active{
+			top: 2px;
+			left: 2px;
+			box-shadow: inset 0 0 10px rgba(82, 82, 82, 0.85);
+		}
+
+		#logo{
+			position: relative;
+			top:60px;
+		}
+	
+		/*.nav-logo{
+			width: 50px;
+			cursor: pointer;
+			margin: 30px 0;
+		}*/
+		.nav-links{
+			flex: 1;
+			text-align: center;
+		}
+		.nav-links ul{
+			/*margin-left: 40px;*/
+			display: inline;
+		}
+		.nav-links ul li{
+			list-style: none;
+			display: inline-block;
+			margin-right: 90px;
+		}
+		.nav-links ul a{
+			color: #FFFFFF;
+			text-decoration: none;
+			font-size: 13px;
+
+		}
+		.nav-links ul li::after{
+			content: '';
+			width: 0;
+			height: 2px;
+			background: #b5651d;
+			display: block;
+			margin: auto;
+			transition: .5s;
+		}
+		.nav-links ul li:hover::after{
+			width: 100%;
+
+		}
+		.title{
+			margin: 80px 130px;
+			color: #FFFFFF
+		}
+
+		.title h1{
+			font-size: 64px;
+			margin-bottom: 30px;
+			color: white;
+			font-style: italic;
+		}
+
+		/*.vertical-bar{
+			height: 100%;
+			background: #000;
+			top: 0;
+			left: 0;
+			position: absolute;
+		}*/
+		.search-icon{
+			height: 60%;
+			width: 80px;
+		}
+		.search-icon img{
+			margin: 35px 13px;
+			display: block;
+			color: #FFFFFF;
+			font-size: 30px;
+			cursor: pointer;
+			height: 50px;
+			width: 50px;
+		}
+		.menu-icon{
+			display: none;
+			width: 20px;
+			cursor: pointer;
+			margin-right: 0;
+		}
+		.close{
+			display: none;
+			width: 20px;
+			cursor: pointer;
+			margin-right: 0;
+		}
+		*{
+		box-sizing: border-box;
+	}
+
+	html{
+		scroll-behavior: smooth;
+	}
+
+	body{
+		margin:0;
+		background-color: #F0ECEA; 
+		background-size: cover;
+	}
+
+	.nav-bar,footer{
+		background-color: #1F201F;
+		height: 6vh;
+
+	}
+
+	.nav-bar{
+			position: fixed;
+			top:0;
+	}
+
+	.nav-bar img{
+		max-width: 180px;
+		margin-left: 50px;
+		position: fixed;
+
+	}
+
+	/*header a{
+		margin-top: 20px; margin-bottom: 10px; margin-right: 100px;
+		padding: repeat(2,5px);
+		display: block;
+		color: white;
+		text-decoration: none; font-size: 1.4em;
+		float: right;
+	}*/
+
+	footer{
+		width: 100%;
+		position:absolute; 
+		bottom: 0;
+		color: white;
+		text-align: center;
+	}
+
+	footer h3{
+		margin-top: 20px;
+	}
+
+	.wraps{
+		display: flex; flex: wrap;
+	}
+
+	#container{
+		display: grid;
+		grid-template-areas: 
+		"one two three";
+		margin-left: 20px;
+	}
+
+	.cards{
+		width: 500px; height: 500px;
+		display: block;
+		margin-top:10px; margin-left: 50px;
+		border:1px solid;
+	}
+
+	#contentBox{
+		width: 400px; height: 200px;
+		margin-left: 100px; margin-top: 40px;
+		display: block;
+	}
+
+	#contentBox h1{
+		font-size: 3em;
+	}
+
+
+	#contentBox h2{
+		font-size: 2em;
+		color: white;
+	}
+	h3{
+		font-size: 2em;
+		color: white;
+		text-align: center;
+		/*justify-content: center*/;
+		/*align-items: center;*/
+	}
+
+	#fCards{
+		background-size: 100% 100%;
+	}
+
+	#iCards{
+		background-size: 100% 100%;
+	}
+
+	#corCards{
+		background-size: 100% 100%;
+	}
+	#fCards, #iCards, #corCards{
+		border-style: none;
+	}
+		@media only screen and (max-width: 600px){
+		
+
+			body{
+				width: 600px;
+
+			}
+			
+			.title h1{
+				font-size: 50px;
+			}
+			.nav-bar{
+				padding: 10px 30px;
+			}
+			.menu-icon{
+				position: absolute;
+				right: 20px;
+				top: 10px;
+				width: 30px;
+			}
+			.nav-bar .menu-icon{
+				display: block;
+				color: #FFFFFF;
+				margin: 10px 25px;
+				cursor: pointer;
+			}
+			.nav-links{
+				font-size: 24px;
+				line-height: 40px;
+				height: 100vh;
+				width: 150px;
+				background: #000;
+				top: 10px;
+				right: -200px;
+				position: absolute;
+				text-align: left;
+				z-index: 2;
+				transition: 0.5s;
+			}
+			.nav-links ul a{
+				display: block;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			.close{
+				display: block;
+			}
+			#logo{
+				position: static;
+
+			}
+
+			#container{
+				display: grid;
+				grid-template-areas: 
+				"one"
+				"two"
+				"three";
+			}
+
+			footer{
+				position: static;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+			}
+
+			/*--------------header here---------------*/
+
+		header{
+			height: 33vh;
+		}
+
+		header a{
+			float: none;
+			text-align: center;
+			margin-left: auto; margin-right: auto;
+		}
+
+		header img{
+			max-width: 200px;
+			margin-left: auto; margin-right: auto;
+			display: block;
+		}
+
+		/*------------main content here-----------*/
+
+		.wraps{
+			flex-direction: column;
+		}
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="bwep">
+	<div class="nav-bar">
+			<!-- <div class="nav-logo">
+				<img src="C:/Users/Owner/Documents/bwep/assets/logo.jpg">
+			</div> -->
+			<div class="nav-links" id="nav-links">
+				<img src="close.jpeg" class="close" onclick="closeMenu()">
+
+				<ul>
+					<a href="index.html"><li>HOME</li></a>
+					<a href="NavCustom.html"><li>CUSTOMIZE</li></a>
+					<a href="aboutus.html"><li>ABOUT US</li></a>
+					<a href="Cards.html"><li>TYPES OF CARD</li></a>
+					<!-- <a href="#"><li>FORMAL</li></a>
+					<a href="#"><li>INFORMAL</li></a> -->
+
+				</ul>
+			</div>
+			<img src="menubar.jpeg" class="menu-icon" onclick="showMenu()">
+		</div>
+		<center><img id="logo" src="background/logo.png"></center>
+		<div class="title">
+			<!-- <h1 style="display: block; background-color: black; width:290px;">COME-IN</h1>
+			<h2 style="font-style: italic; color: #E8B154; font-weight: bolder;">CUSTOMISE YOUR ONLINE GREETING CARDS</h2> -->
+		</div>
+	</div>
+	<div id="container">
+	<div class="cards" id="fCards" style="grid-area:one">
+		<h3 style="color: black; font-style: italic;">Corporate Section</h3>
+		<a href="Cards.html"><img src="background/corporate.jpeg" class="pic1"></a>
+		
+	</div>
+	<div class="cards" id="iCards" style="grid-area:two">
+		<h3 style="color: black; font-style: italic;">Formal Section</h3>
+		<a href="Cards.html"><img src="background/formal.jpeg" class="pic1"></a>
+		
+	</div>
+	<div class="cards" id="corCards" style="grid-area:three">
+		<h3 style="color: black; font-style: italic;">Informal Section</h3>
+		<a href="Cards.html"><img src="background/informal.jpeg" class="pic1"></a>
+		
+	</div>
+</div>
+<script type="text/javascript">
+	var show = document.getElementById("nav-links");
+	function showMenu() {
+		show.style.right = "0";
+	}
+	function closeMenu() {
+		show.style.right = "-200px";
+	}
+</script>
+<div class="wraps"></div>
+
+<footer><h3>Contact Us</h3></footer>
+</body>
+
+</html>
+
